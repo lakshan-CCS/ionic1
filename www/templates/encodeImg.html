@@ -1,0 +1,35 @@
+<ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Encode Image</h1>
+      <div class="buttons">
+        <button class="button button-clear" ng-click="closeLogin()">Close</button>
+      </div>
+    </ion-header-bar>
+    <ion-content>
+      <form ng-submit="Encode()">
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Image</span>
+            <input type="file" accept="image/*" class="button button-light" id="img" onchange="angular.element(this).scope().onImgFileSelect(this)"/>
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Document</span>
+            <input type="file" accept="text/plain" class="button button-light" id="doc" onchange="angular.element(this).scope().onDocFileSelect(this)"/>
+          </label>          
+          <label class="item item-input">
+            <span class="input-label">Password</span>
+            <input type="password" id="pass">
+          </label>
+          <label class="item">
+            <button class="button button-block button-positive" type="submit">Encode</button>
+          </label>
+          <canvas id='canvas' style='display: none;'></canvas>          
+          <label class="item">
+            <Button class="button button-block button-positive" id="downloadEncoded" >Download</Button>
+          </label>
+          <img id='output' width="200px"/>
+        </div>
+      </form>
+    </ion-content>
+  </ion-modal-view>
+  

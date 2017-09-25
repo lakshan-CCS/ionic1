@@ -53,4 +53,29 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('EncodeCtrl', function($scope){
+  $scope.fileContent = null;
+  $scope.ImageData = {};
+
+  $scope.onDocFileSelect = function (e) {    
+    var reader = new FileReader();
+    reader.onload = function () {
+      console.log('giya');
+      $scope.fileContent = reader.result;      
+    }
+    reader.readAsText(e.files[0]);
+  }
+
+  $scope.Encode = function(){
+    var message = $scope.fileContent;
+    var password = $scope.ImageData.password;
+    var output = document.getElementById('output');
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    console.log($scope.fileContent);
+    console.log('test');
+  }
 });

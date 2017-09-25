@@ -32,6 +32,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
+  .state('app.Encode', {
+    url: '/Encode',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/encodeImg.html',
+        controller: 'EncodeCtrl'
+      }
+    }
+  })
+
   .state('app.search', {
     url: '/search',
     views: {
